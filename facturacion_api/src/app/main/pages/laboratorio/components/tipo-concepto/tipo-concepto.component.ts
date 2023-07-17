@@ -8,7 +8,7 @@ import { TokenService } from 'src/app/_service/token.service';
 import { BreadcrumbService } from 'src/app/_service/utils/app.breadcrumb.service';
 import { TipoConceptoService } from '../../services/tipoConcepto.service';
 import { severities } from 'src/app/_enums/constDomain';
-import { TipoConcepto } from '../../model/TipoConcepto';
+
 
 @Component({
   selector: 'app-tipo-concepto',
@@ -20,13 +20,15 @@ export class TipoConceptoComponent implements OnInit {
 
   @Input() tipoConcepto: TipoConceptoDto;
 
+  display: boolean = false;
+
   proceso: string= 'tipoConcepto';
 
   response: ResponseGenerico
 
   formtipoConcepto: FormGroup
 
-  listTipoConcepto: TipoConcepto[]= [];
+  listTipoConcepto: TipoConceptoDto[]= [];
 
   token: TokenDto;
 
@@ -36,9 +38,10 @@ export class TipoConceptoComponent implements OnInit {
       private tokenService: TokenService,
       private breadcrumbService: BreadcrumbService,
 
-      private tipoConceptoService: TipoConceptoService
+      private tipoConceptoService: TipoConceptoService,
+     
   ) {
-      this.breadcrumbService.setItems([{label: 'Forma Pago '}]);
+      this.breadcrumbService.setItems([{label: 'TIPO CONCEPTO '}]);
   }
 
   ngOnInit(): void {
@@ -50,6 +53,8 @@ export class TipoConceptoComponent implements OnInit {
   get f() {
       return this.formtipoConcepto.controls;
   }
+
+
 
   iniciarForms(){
 
@@ -67,7 +72,7 @@ export class TipoConceptoComponent implements OnInit {
         idTipoConcepto: new FormControl(null,),
         nombreTipoConcepto: new FormControl('', Validators.compose([Validators.required])),
         descTipoConcepto: new FormControl('', Validators.compose([Validators.required])),
-      /*   estadoTc: new FormControl(true, Validators.compose([Validators.requiredTrue])), */
+        /*   estadoTc: new FormControl(true, Validators.compose([Validators.requiredTrue])), */
         fechaTc: new FormControl(new Date().toLocaleDateString(), Validators.compose([Validators.required])),
         prtidaNc: new FormControl('', Validators.compose([Validators.required])),
         idUsuarioTc: new FormControl('', Validators.compose([Validators.required])),
@@ -188,6 +193,7 @@ export class TipoConceptoComponent implements OnInit {
   cancelar() {
       this.setearForm();
       this.appService.msgInfoDetail('info', '', 'Acción Cancelada')
+      this.display = false;
   }
 
 

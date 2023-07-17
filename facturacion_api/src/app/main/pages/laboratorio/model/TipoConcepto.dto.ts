@@ -1,15 +1,17 @@
 export class TipoConceptoDto {
-    descTipoConcepto: string;
-    fechaTc: Date;
-    idTipoConcepto: number;
-    idUnidadTc: number;
-    idUsuarioTc: number;
-    nombreTipoConcepto: string;
-    prtidaNc: number;
+  idTipoConcepto: number;
+  nombreTipoConcepto: string;
+  descTipoConcepto: string;
+  
+    
+  idUnidadTc: number;
+  idUsuarioTc: number;
+  fechaTc: Date;
+  prtidaNc: number;
     //estadoTc: string;
   
 
-    //estado:boolean;
+   
 
     fechaTxt: string
     

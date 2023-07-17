@@ -39,7 +39,8 @@ export const RUTA_ENTIDAD: Routes = [
         component: TipoConceptoComponent,
         canActivate: [AuthGuard],
     }
-
+    
+    
 
 
 

@@ -2,13 +2,11 @@
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 
-<p-dialog [contentStyle]="{'overflow': 'visible'}" header="" [(visible)]="display" [modal]="true"
-[style]="{ width: '45vw' }" [draggable]="true" [resizable]="true" xmlns:p="http://www.w3.org/1999/html">
+<p-dialog [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [closable]="false" [dismissableMask]="true">
   <p-header  >
     <h4 class="">Registro Tipo Concepto</h4>
 </p-header>
         <!-- Aquí va todo tu formulario -->
-     
         <form [formGroup]="formtipoConcepto">
           <div class="card no-gutter widget-overview-box widget-overview-box-1">
             <br>
@@ -73,10 +71,14 @@
             </div>
           </div>
         </form>
+
+
+
+        
+        
        
         
 </p-dialog>
-
 
 
  <p-card>

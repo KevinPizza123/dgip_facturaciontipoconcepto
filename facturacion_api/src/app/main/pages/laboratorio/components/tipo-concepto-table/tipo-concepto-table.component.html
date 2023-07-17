@@ -3,10 +3,10 @@
     <div class="card">
       <p-table #dt [value]="listtipoConcepto" [rows]="10" [paginator]="true" [loading]="loading"
                [globalFilterFields]="[
-                 'idTipoConcepto',
-                 'nombreTipoConcepto',
-                 'descTipoConcepto',
-                 'prtidaNc'
+               'idTipoConcepto', 
+               'nombreTipoConcepto', 
+               'descTipoConcepto', 
+               'prtidaNc'
                ]"
                responsiveLayout="scroll" [(selection)]="selectedTipoConcepto"
                [rowHover]="true" dataKey="idTipoConcepto"
@@ -53,12 +53,12 @@
                 <p-columnFilter type="text" field="nombreTipoConcepto" display="menu"></p-columnFilter>
               </div>
             </th>
-            <th pSortableColumn="estadoTc">
+<!--             <th pSortableColumn="estadoTc">
               <div class="flex justify-content-between align-items-center">Estado
                 <p-sortIcon field="estadoTc"></p-sortIcon>
                 <p-columnFilter type="text" field="estadoTc" display="menu"></p-columnFilter>
               </div>
-            </th>
+            </th> -->
             <th pSortableColumn="descTipoConcepto">
               <div class="flex justify-content-between align-items-center">Detalle
                 <p-sortIcon field="descTipoConcepto"></p-sortIcon>
@@ -75,25 +75,25 @@
             </td>
             <td>{{ rowIndex + 1 }}</td>
             <td>{{ item.nombreTipoConcepto }}</td>
-            <td>
+<!--             <td>
               <mark [ngClass]="item.estadoTc == 'ACTIVO' ? 'border-green-500' : 'border-red-500' ">
                 {{ item.estadoTc }}
               </mark>
-            </td>
+            </td> -->
             <td>{{ item.descTipoConcepto }}</td>
             <td>
               <button pButton pRipple icon="pi pi-pencil"
-                      class="p-button-rounded p-button-warning p-button-text p-button-sm p-mr-2" (click)="editTipoConcepto(item)"
-                      pTooltip="Editar" tooltipPosition="left"></button>
+                                    class="p-button-rounded p-button-warning p-button-text p-button-sm p-mr-2" (click)="editConcepto(item)"
+                                    pTooltip="Editar" tooltipPosition="left"   ></button>
               <button pButton pRipple icon="pi pi-trash"
                       class="p-button-rounded p-button-danger p-button-text p-button-sm" (click)="deleteTipoConcepto(item)"
-                      pTooltip="Eliminar" tooltipPosition="left" *ngIf="item.estadoTc =='ACTIVO'"></button>
+                      pTooltip="Eliminar" tooltipPosition="left" ></button>
             </td>
           </tr>
         </ng-template>
         <ng-template pTemplate="summary">
           <div class="p-d-flex p-ai-center p-jc-between">
-            Registros Totales: {{ listTipoConcepto ? listTipoConcepto.length : 0 }}.
+            Registros Totales: {{ listtipoConcepto ? listtipoConcepto.length : 0 }}.
           </div>
         </ng-template>
       </p-table>

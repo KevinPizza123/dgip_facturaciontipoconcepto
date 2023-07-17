@@ -42,6 +42,11 @@ export class AppMenuComponent implements OnInit {
                 label: 'Inicio', icon: 'pi pi-fw pi-download',
                 items: [
                     {
+                        label: 'tipo concepto',
+                        icon: 'pi pi-file',
+                        routerLink: ['/tipoConcepto'],
+                    },
+                    {
                         label: 'EPN', icon: 'pi pi-fw pi-globe', url: ['https://epn.edu.ec']
                     },
                     {

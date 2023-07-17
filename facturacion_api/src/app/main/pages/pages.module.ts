@@ -25,8 +25,7 @@ import { TipoConceptoTableComponent } from './laboratorio/components/tipo-concep
     declarations: [
 
 
-TipoConceptoTableComponent,
-TipoConceptoComponent,
+
     ConceptoLiquidacionComponent,
         ConceptoLiquidacionTableComponent,
         CretencionComponent,

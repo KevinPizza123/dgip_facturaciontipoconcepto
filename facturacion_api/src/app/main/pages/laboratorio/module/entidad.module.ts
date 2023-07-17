@@ -37,6 +37,8 @@ import {EntidadTableComponent} from "../components/entidad-table/entidad-table.c
 import {CdkTableModule} from "@angular/cdk/table";
 import {BancosComponent} from "../components/bancos/bancos.component";
 import {BancosTableComponent } from "../components/bancos-table/bancos-table.component";
+import { TipoConceptoTableComponent } from '../components/tipo-concepto-table/tipo-concepto-table.component';
+import { TipoConceptoComponent } from '../components/tipo-concepto/tipo-concepto.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import {BancosTableComponent } from "../components/bancos-table/bancos-table.com
         EntidadComponent,
         EntidadTableComponent,
         BancosComponent,
-        BancosTableComponent
+        BancosTableComponent,
+        TipoConceptoTableComponent,
+        TipoConceptoComponent,
     ],
     imports: [
         CommonModule,
